@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png"> <!-- Use "favicon.ico" for .ico files -->
+</head>
+<body>
+    <div class="intro">
+        <h1>Portugal Districts Visualization</h1>
+        <!-- <p>Explore the districts of Portugal and visualize the results of the simulated annealing and ILP solution for political districting.</p> -->
+    </div>
+
+    <div class="controls">
+        <label for="districts-select">Select District: </label>
+        <select id="districts-select">
+            <option value="AVEIRO">Aveiro</option>
+            <option value="BRAGA">Braga</option>
+            <option value="LISBOA">Lisboa</option>
+            <option value="PORTO">Porto</option>
+        </select>
+        <label for="cluster-type">Cluster Type: </label>
+        <select id="cluster-type">
+            <option value="SA_novo">SA novo</option>
+            <!--option value="SA_antigo_ILP">SA antigo + ILP</option-->
+            <option value="SA_novo_ILP">SA novo + ILP</option>
+            <option value="ILP">ILP</option>
+        </select>
+    </div>
+
+    
+<div class="map-and-legend">
+    <svg id="map" width="1000" height="700"></svg>
+    <div class="legend">
+        <h3>Legend:</h3>
+        <svg id="legend" width="200" height="400"></svg>
+    </div>
+</div>
+
+
+    <table id="results-table">
+        <thead>
+            <tr>
+                <th>Distrito</th>
+                <th>Type</th>
+                <th>População</th>
+                <th>Compactness</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Populated using JavaScript -->
+        </tbody>
+    </table>
+
+ 
+
+    <div class="info-sidebar">
+    <h3>Cluster Information:</h3>
+    <div id="cluster-info">
+        <!-- Cluster details will be populated here -->
+    </div>
+</div>
+
+    
+
+    <div class="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
